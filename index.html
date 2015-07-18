@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Feegure | The clean way to calculate out those dreaded Paypal and Stripe fees.</title>
 	<meta name="description" content="Easy and simple way to calculate fees for Paypal and Stripe payments automatically."/>
-	<link rel="icon" type="image/png" href="/favicon.png" />
+	<link rel="icon" type="image/png" href="favicon.png" />
 	
 	<!--FB OG tags -->
 	<meta property='og:locale' content='en_US'/>
@@ -19,7 +19,7 @@
 	body{
 		margin: 0;
 		padding: 0;
-		background: #f9f9f9 url('subtlenet2.png') repeat 0 0 fixed;
+		background: #f9f9f9 url('background.png') repeat 0 0 fixed;
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		color: #4d4d4d;
 	}
@@ -166,24 +166,9 @@
 		
 		<p id="fee_notice" class="notice">Based on 2.9% + 30&#162;</p>
 		
-		<div class="adspace">
-			<script type="text/javascript"><!--
-			google_ad_client = "ca-pub-4715901853235866";
-			/* Feegure Main Ad */
-			google_ad_slot = "4900225833";
-			google_ad_width = 468;
-			google_ad_height = 60;
-			//-->
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-		</div>
-		
 		<footer>
 			<p>Stripe is a registered trademark of Stripe.</p>
 			<p>PayPal is a registered trademark of PayPal, Inc.</p>
-			<p>&copy<?php echo date('Y'); ?> - Site built by <a href="http://www.branberg.com" target="_blank">Branberg</a> because we needed it.</p>
 		</footer>
 	
 	</div>
@@ -203,7 +188,7 @@
 			
 				var cost_value = parseFloat($(this).val());
 				var percentage = .029;
-				var cents = .3;
+				var cents = 0.3;
 				
 				var total = (cost_value + cents) / ( 1 - percentage );
 				var fee = total - cost_value;
