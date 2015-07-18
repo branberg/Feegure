@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Feegure | The clean way to calculate out those dreaded Paypal and Stripe fees.</title>
+	<meta name="description" content="Easy and simple way to calculate fees for Paypal and Stripe payments automatically."/>
+	<link rel="icon" type="image/png" href="/favicon.png" />
+	
+	<!--FB OG tags -->
+	<meta property='og:locale' content='en_US'/>
+	<meta property='og:type' content='website'/>
+	<meta property='og:title' content='Feegure | The clean way to figure out those dreaded Paypal and Stripe fees.'/>
+	<meta property='og:description' content='Easy and simple way to calculate fees for Paypal and Stripe payments automatically.'/>
+	<meta property='og:url' content='http://feegure.com/'/>
+	<meta property='og:site_name' content='Feegure'/>
+	<meta property='og:image' content='http://feegure.com/fb.png'/>
+	
+	<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		background: #f9f9f9 url('subtlenet2.png') repeat 0 0 fixed;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		color: #4d4d4d;
+	}
+	a{
+		color: #666;
+	}
+	#wrapper{
+		width: 620px;
+		margin: 0 auto;
+	}
+	header{
+		margin: 2em 0 6em 0;
+	}
+	h1{
+		font-size: 3.4em;
+		margin: 0;
+	}
+	span.subtitle{
+		
+	}
+	.title,
+	.subtitle{
+		color: #29abe2;
+	}
+	
+	.line{
+		font-size: 2.5em;
+		overflow: hidden;
+		margin: 0 0 1.2em 0;
+	}
+	.line .label{
+		font-weight: 900;
+		float: left;
+		width: 300px;
+		margin: 0 20px 0 0;
+	}
+	.line .money{
+	
+		float: left;
+		width: 300px;
+		font-weight: 900;
+		
+	}
+	.line .money input{
+		float: left;
+		color: #29abe2;
+	}
+	.line .money input,
+	.line .money span.total{
+		
+		display: block;
+		padding: 0;
+		margin:0 0 0 14px;
+		border: none;
+		border-bottom: solid 2px #4d4d4d;
+		font-size: 1em;
+		font-weight: 900;
+		background: none;
+		width: 200px;
+		
+	}
+	.line .money span{
+		float: left;
+	}
+	input:focus { outline: none; }
+	
+	.lines .line:last-child{
+		margin-bottom: 0;
+	}
+	
+	p.notice{
+		color: #808080;
+		font-weight: 100;
+	}
+	p#fee_notice{
+		margin-top: 0;
+		margin-bottom: 8em;
+	}
+	p#ad_notice{
+		margin-bottom: 4px;
+	}
+	
+	.adspace{
+		background: #fff;
+		padding: 10px;
+		min-height: 200px;
+	}
+	
+	footer{
+		margin: 6em 0 0 0;
+		padding: 0 0 2em 0;
+		color: #808080;
+	}
+	footer p{
+		margin: .4em 0;
+	}
+	</style>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-19739952-10', 'feegure.com');
+	  ga('send', 'pageview');
+	
+	</script>
+	
+</head>
+<body>
+	
+	<div id="wrapper">
+		
+		<header>
+			<h1 class="title">Feegure</h1>
+			<span class="subtitle">The clean way to calculate those dreaded Paypal and Stripe fees.</span>
+		</header>
+		
+		<div class="lines">
+		
+			<div class="line">
+				<div class="label">Starting Cost</div>
+				<div class="money">
+					<span class="dollar">$</span><input id="starting_cost" name="starting_cost" placeholder="0.00" />
+				</div>
+			</div>
+			
+			<div class="line">
+				<div class="label">Total Fees</div>
+				<div class="money">
+					<span class="dollar">$</span><span class="total" id="total_fees">0.00</span>
+				</div>
+			</div>
+			
+			<div class="line">
+				<div class="label">Cost After Fees</div>
+				<div class="money">
+					<span class="dollar">$</span><span class="total" id="cost_after">0.00</span>
+				</div>
+			</div>
+		
+		</div>
+		
+		<p id="fee_notice" class="notice">Based on 2.9% + 30&#162;</p>
+		
+		<div class="adspace">
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-4715901853235866";
+			/* Feegure Main Ad */
+			google_ad_slot = "4900225833";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+		</div>
+		
+		<footer>
+			<p>Stripe is a registered trademark of Stripe.</p>
+			<p>PayPal is a registered trademark of PayPal, Inc.</p>
+			<p>&copy<?php echo date('Y'); ?> - Site built by <a href="http://www.branberg.com" target="_blank">Branberg</a> because we needed it.</p>
+		</footer>
+	
+	</div>
+	
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		jQuery(document).ready(function($) {
+			
+			var starting_cost = $('#starting_cost');
+			var total_fees = $('#total_fees');
+			var cost_after = $('#cost_after');
+			
+			//get real-time value for starting cost
+			$('#starting_cost').keyup(function(){
+			
+				var cost_value = parseFloat($(this).val());
+				var percentage = .029;
+				var cents = .3;
+				
+				var total = (cost_value + cents) / ( 1 - percentage );
+				var fee = total - cost_value;
+				
+				var feeRounded = fee.toFixed(2);
+				var totalRounded = total.toFixed(2);
+				
+				//add new value to total fees & check to see if it's a number
+				if( isNaN(feeRounded) != true ){
+					$('#total_fees').text(feeRounded);
+				} else {
+					$('#total_fees').text('0.00');
+				}
+				
+				//add total & check to see if it's a number
+				if( isNaN(totalRounded) != true ){
+					$('#cost_after').text(totalRounded);
+				} else {
+					$('#cost_after').text('0.00');
+				}
+				
+				
+			});
+			
+		});
+		
+	</script>
+	
+</body>
+</html>
