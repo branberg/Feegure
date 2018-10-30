@@ -5,7 +5,7 @@ class Wrapper extends Component {
     super(props);
 
     this.state = {
-      startingCost: 0,
+      startingCost: '',
       percentage: 0.029,
       cents: 0.3,
     }
@@ -14,44 +14,36 @@ class Wrapper extends Component {
   }
 
   onInputChange(event) {
-    console.log(event.target.value);
+    const convertedNumber = parseFloat(event.target.value);
+
+    if (isNaN(convertedNumber)) {
+      return null;
+    }
+
     this.setState({
-      startingCost: event.target.value
+      startingCost: convertedNumber
     });
   }
 
   renderTotalFees() {
+    const fee = this.renderTotalCost() - this.state.startingCost;
 
+    if (this.state.startingCost === '') {
+      return '0.00';
+    }
+
+    return fee.toFixed(2);
   }
 
   renderTotalCost() {
+    const total = (this.state.startingCost + this.state.cents) / (1 - this.state.percentage);
 
+    if (this.state.startingCost === '') {
+      return '0.00';
+    }
 
+    return total.toFixed(2);
   }
-
-  // var cost_value = parseFloat($(this).val());
-  // var percentage = .029;
-  // var cents = 0.3;
-
-  // var total = (cost_value + cents) / ( 1 - percentage );
-  // var fee = total - cost_value;
-
-  // var feeRounded = fee.toFixed(2);
-  // var totalRounded = total.toFixed(2);
-
-  // //add new value to total fees & check to see if it's a number
-  // if( isNaN(feeRounded) != true ){
-  //   $('#total_fees').text(feeRounded);
-  // } else {
-  //   $('#total_fees').text('0.00');
-  // }
-
-  // //add total & check to see if it's a number
-  // if( isNaN(totalRounded) != true ){
-  //   $('#cost_after').text(totalRounded);
-  // } else {
-  //   $('#cost_after').text('0.00');
-  // }
 
   render() {
     return (
@@ -72,6 +64,9 @@ class Wrapper extends Component {
                 id="starting_cost"
                 name="starting_cost"
                 placeholder="0.00"
+                type="number"
+                step="0.01"
+                min="0.00"
                 onChange={this.onInputChange}
                 value={this.state.startingCost}
               />
@@ -100,7 +95,7 @@ class Wrapper extends Component {
 
         </div>
 
-        <p id="fee_notice" className="notice">Based on 2.9% + 30&#162;</p>
+        <p id="fee_notice" className="notice">Based on 2.9% + $0.30</p>
 
         <footer>
         <p>Stripe is a registered trademark of Stripe.</p>
