@@ -1,43 +1,47 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background: #f9f9f9 url('/background.png') repeat 0 0 fixed;
+  background-color: #1d1a1c;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #4d4d4d;
 }
-a{
+
+a {
   color: #666;
 }
-#wrapper{
+
+#wrapper {
   width: 620px;
   margin: 0 auto;
 }
-header{
+
+header {
   margin: 2em 0 6em 0;
 }
-h1{
+
+h1 {
   font-size: 3.4em;
   margin: 0;
 }
-span.subtitle{
 
-}
 .title,
-.subtitle{
+.subtitle {
   color: #29abe2;
 }
 
-.line{
+.line {
   font-size: 2.5em;
   overflow: hidden;
   margin: 0 0 1.2em 0;
 }
-.line .label{
+
+.line .label {
   font-weight: 900;
   float: left;
   width: 300px;
   margin: 0 20px 0 0;
 }
+
 .line .money{
 
   float: left;
@@ -45,13 +49,14 @@ span.subtitle{
   font-weight: 900;
 
 }
-.line .money input{
+
+.line .money input {
   float: left;
   color: #29abe2;
 }
-.line .money input,
-.line .money span.total{
 
+.line .money input,
+.line .money span.total {
   display: block;
   padding: 0;
   margin:0 0 0 14px;
@@ -61,40 +66,46 @@ span.subtitle{
   font-weight: 900;
   background: none;
   width: 200px;
-
 }
-.line .money span{
+
+.line .money span {
   float: left;
 }
-input:focus { outline: none; }
 
-.lines .line:last-child{
+input:focus {
+  outline: none;
+}
+
+.lines .line:last-child {
   margin-bottom: 0;
 }
 
-p.notice{
+p.notice {
   color: #808080;
   font-weight: 100;
 }
-p#fee_notice{
+
+p#fee_notice {
   margin-top: 0;
   margin-bottom: 8em;
 }
-p#ad_notice{
+
+p#ad_notice {
   margin-bottom: 4px;
 }
 
-.adspace{
+.adspace {
   background: #fff;
   padding: 10px;
   min-height: 200px;
 }
 
-footer{
+footer {
   margin: 6em 0 0 0;
   padding: 0 0 2em 0;
   color: #808080;
 }
-footer p{
+
+footer p {
   margin: .4em 0;
 }
